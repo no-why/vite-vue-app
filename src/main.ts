@@ -17,6 +17,7 @@ app.use(axios)
 
 setupElementPlus(app)
 
+window.a = 'a';
 console.log(import.meta.env)
 
 class Con {
