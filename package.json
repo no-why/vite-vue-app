@@ -8,11 +8,14 @@
     "build:prd": "vuedx-typecheck . && vite build --mode prd",
     "build:stage": "vuedx-typecheck . && vite build --mode stage",
     "serve": "vite preview",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "precommit": "lint-staged"
   },
-  "hooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "src/**/*.ts?(x)": [
@@ -43,13 +46,21 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@types/node": "^14.14.31",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
     "@vitejs/plugin-vue": "^1.1.4",
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typecheck": "^0.6.0",
     "@vuedx/typescript-plugin-vue": "^0.6.0",
     "autoprefixer": "^10.2.4",
     "commitizen": "^4.2.3",
-    "cz-conventional": "^0.0.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.22.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-vue": "^7.8.0",
     "husky": "^5.2.0",
     "less": "^4.1.1",
     "lint-staged": "^10.5.4",
