@@ -1,0 +1,36 @@
+ellipsis()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+bounds($distance)
+  top $distance
+  bottom $distance
+  right $distance
+  left $distance
+
+overlay()
+  position: fixed
+  bounds(0)
+
+flex-box()
+  display: flex
+
+  & > *
+    flex: auto 0 0
+
+h-box()
+  flex-box()
+  flex-direction: row
+
+v-box()
+  flex-box()
+  flex-direction: column
+
+box-center()
+  align-items center
+  justify-content center
+
+bg-default()
+  background-size 100% 100%
+  background-repeat no-repeat

@@ -1,0 +1,57 @@
+{
+  "name": "my-vue-app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build:dev": "vuedx-typecheck . && vite build --mode dev",
+    "build:uat": "vuedx-typecheck . && vite build --mode uat",
+    "build:prd": "vuedx-typecheck . && vite build --mode prd",
+    "build:stage": "vuedx-typecheck . && vite build --mode stage",
+    "serve": "vite preview",
+    "precommit": "lint-staged && npm run test"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "element-plus": "^1.0.2-beta.32",
+    "gds-kit": "^0.1.4",
+    "postcss-px-to-viewport": "^1.1.1",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.4",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@types/node": "^14.14.31",
+    "@vitejs/plugin-vue": "^1.1.4",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vuedx/typecheck": "^0.6.0",
+    "@vuedx/typescript-plugin-vue": "^0.6.0",
+    "autoprefixer": "^10.2.4",
+    "husky": "^5.2.0",
+    "less": "^4.1.1",
+    "postcss": "^8.2.6",
+    "pre-commit": "^1.2.2",
+    "sass": "^1.32.8",
+    "stylus": "^0.54.8",
+    "typescript": "^4.1.3",
+    "vite": "^2.0.2",
+    "vite-plugin-imp": "^2.0.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

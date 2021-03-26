@@ -1,0 +1,184 @@
+
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main
+  margin 0
+  padding 0
+  box-sizing border-box
+  -webkit-user-select none
+  -webkit-tap-highlight-color transparent
+
+html,
+body
+  font-family Source Han Sans CN, Microsoft YaHei, 'PingFang SC', 'Avenir', Helvetica, Arial, sans-serif
+  default-cursor()
+
+ul,
+ol
+  list-style none
+
+em,
+i
+  font-style normal
+
+.pull-left
+  float left
+
+.pull-right
+  float right
+
+.clearfix
+  &:after
+    visibility hidden
+    display block
+    font-size 0
+    content ' '
+    clear both
+    height 0
+
+input:focus,
+button:focus,
+textarea:focus
+  outline none
+
+a,
+a:focus,
+a:hover
+  cursor pointer
+  color inherit
+  outline none
+  text-decoration none
+
+.text-center
+  text-align center
+
+.form-control
+  display block
+  width 100%
+  height 87px
+  line-height 100%
+  font-size 22px
+  color $base-login-text
+  background #000
+  border 1px solid rgba(107, 166, 177, 0.8)
+  border-radius 3px
+  padding-left 30px
+  box-shadow inset 0 -4px 2px rgba(107, 166, 177, 0.2)
+  transition border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+
+.form-control:focus
+  border-color rgba(107, 166, 177, 1)
+  outline 0
+  box-shadow inset 0 -4px 2px rgba(107, 166, 177, 0.2), 0 0 6px rgba(104, 164, 175, 1)
+
+// ::-webkit-scrollbar
+//   display none
+
+@keyframes scale
+  0%
+    transform scale(0)
+
+  50%
+    transform scale(1.1)
+
+  100%
+    transform scale(1)
+
+@keyframes slideX
+  from
+    opacity 0
+    transform translateX(30px)
+
+  to
+    opacity 1
+    transform translateX(0)
+
+@keyframes rotate
+  0%
+    transform rotate(0)
+
+  50%
+    transform rotate(180deg)
+
+  100%
+    transform rotate(360deg)
+
+.list-enter-active,
+.list-leave-active
+  transition all 0.6s
+
+.list-enter,
+.list-leave-to
+  opacity 0
+  transform translateX(30px)
+
+.fade-enter-active,
+.fade-leave-active
+  transition opacity 0.5s
+
+.fade-enter,
+.fade-leave-to
+  opacity 0
+
+.list-complete-item
+  transition all 1s
+
+.list-complete-enter,
+.list-complete-leave-to
+  opacity 0
+  transform translateY(30px)
+
+.list-complete-leave-active
+  position absolute
+
+.scroll-bar
+  &::-webkit-scrollbar
+    display block
+    width 6px
+
+  &::-webkit-scrollbar-thumb
+    background rgba(#D5F9FF, 0.3)
+    border-radius 2px
+
+    &:hover
+      background rgba(#D5F9FF, 0.5)
+
+  &::-webkit-scrollbar-track
+    background rgba(#D5F9FF, 0.1)
+    border-radius 2px
