@@ -4,7 +4,7 @@ import vitePluginImp from 'vite-plugin-imp'
 import path from 'path'
 import { importStylus } from './plugins/vite-stylus-global-import-plugin'
 
-function pathResolve(dir: string) {
+function pathResolve (dir: string) {
   return path.resolve(__dirname, '.', dir)
 }
 
@@ -12,7 +12,7 @@ function pathResolve(dir: string) {
 const globalStyle: Array<string> = [
   'src/assets/styles/vars.styl',
   'src/assets/styles/sass.scss',
-  'src/assets/styles/less.less',
+  'src/assets/styles/less.less'
 ]
 
 export default defineConfig({
@@ -26,16 +26,16 @@ export default defineConfig({
           libName: 'element-plus',
           style: (name) => {
             return `element-plus/lib/theme-chalk/${name}.css`
-          },
-        },
-      ],
+          }
+        }
+      ]
     }),
-    importStylus(`@import "${pathResolve(globalStyle[0])}";`),
+    importStylus(`@import "${pathResolve(globalStyle[0])}";`)
   ],
   resolve: {
     alias: {
-      '@': pathResolve('src'),
-    },
+      '@': pathResolve('src')
+    }
   },
   css: {
     preprocessorOptions: {
@@ -46,11 +46,11 @@ export default defineConfig({
       //   additionalData: '$color-orange = blue;',
       // },
       scss: {
-        additionalData: `@import "${pathResolve(globalStyle[1])}";`,
+        additionalData: `@import "${pathResolve(globalStyle[1])}";`
       },
       less: {
-        additionalData: `@import "${pathResolve(globalStyle[2])}";`,
-      },
-    },
-  },
+        additionalData: `@import "${pathResolve(globalStyle[2])}";`
+      }
+    }
+  }
 })

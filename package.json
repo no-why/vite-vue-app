@@ -9,7 +9,8 @@
     "build:stage": "vuedx-typecheck . && vite build --mode stage",
     "serve": "vite preview",
     "commit": "git-cz",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
